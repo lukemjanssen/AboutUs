@@ -1,0 +1,251 @@
+.navbar {
+    width: 100%;
+    font-family: var(--font-family-base);
+}
+
+.navbar-inner {
+    max-width: 1440px;              /* from Figma — desktop frame width */
+    margin: 0 auto;                 /* center it on wide screens */
+    padding: var(--space-4) clamp(var(--space-4), 5vw, var(--space-28)); /* top/side padding from Figma, with a bit of responsive scaling on the sides */
+    display: flex;
+    align-items: center;            /* vertically center items in the navbar */
+    gap: clamp(var(--space-6), 5vw, var(--space-24)); /* shrinks from 96px → 24px as viewport narrows */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);            /* space between mark and type */
+    text-decoration: none;
+}
+
+.navbar-logo__image {
+    object-fit: contain;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-lg); /* from Figma — logo mark size */
+}
+
+.navbar-logo__mark {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    letter-spacing: var(--letter-spacing-logo);
+}
+
+.navbar-nav {
+    flex: 1;                        /* grow to fill remaining space between logo and cta */
+}
+
+.navbar-nav__list {
+    display: flex;
+    gap: var(--space-6);            /* space between nav links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav__link {
+    text-decoration: none;
+    color: var(--text-secondary);   /* muted nav link color from Figma */
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
+    padding: var(--space-3) var(--space-0-5); /* 12px top/bottom, 2px sides — from Figma */
+    display: block;
+    transition: color 0.15s ease;
+}
+
+.navbar-nav__link:hover {
+    color: var(--text-primary-hover);
+}
+
+.navbar-nav__link:focus-visible {
+    outline: none;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-focus);
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--space-2-5) var(--space-4); /* 10px top/bottom, 16px sides — from Figma */
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family-base);
+    line-height: var(--line-height-base);
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);   /* both buttons have shadow in Figma */
+    transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn--primary {
+    background-color: var(--bg-brand-primary); /* from Figma — indigo-700 */
+    color: var(--text-primary-invert);
+}
+
+.btn--primary:hover {
+    background-color: var(--bg-brand-primary-hover);
+}
+
+.btn--primary:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+.btn--secondary {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 0.5px solid var(--border-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn--secondary:hover {
+    background-color: var(--bg-primary-hover);
+    color: var(--text-primary-hover);
+}
+
+.btn--secondary:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+.navbar-cta {
+    display: flex;
+    gap: var(--space-4);            /* space between buttons */
+}
+
+.navbar-hamburger {
+    display: none;                  /* hidden on desktop */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.navbar-hamburger img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.navbar-hamburger:focus-visible {
+    outline: none;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-focus);
+}
+
+/* ── Overlay ──────────────────────────────────────────────── */
+
+.navbar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;                       /* top/right/bottom/left: 0 — covers full viewport */
+    background-color: var(--bg-overlay);
+    opacity: 0.7;
+    z-index: 10;
+}
+
+.navbar-overlay.is-open {
+    display: block;
+}
+
+/* ── Mobile drawer ────────────────────────────────────────── */
+
+.navbar-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 359px;
+    height: 100dvh;                 /* dvh = dynamic viewport height, handles mobile browser chrome */
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);            /* 24px between header, nav, and cta sections */
+    padding: var(--space-8) var(--space-4) var(--space-4); /* 32px top, 16px sides/bottom */
+    z-index: 20;                    /* above the overlay */
+    transform: translateX(-100%);   /* hidden off-screen to the left by default */
+    transition: transform 0.25s ease;
+    border-right: 1rem solid var(--border-primary); /* visual separation from cta section — using a large value to ensure it fills the height */
+}
+
+.navbar-drawer.is-open {
+    transform: translateX(0);       /* slide in */
+}
+
+/* Drawer header — logo + close button side by side */
+.navbar-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Drawer nav — grows to fill remaining vertical space */
+.navbar-drawer__nav {
+    flex: 1;
+}
+
+.navbar-drawer__list {
+    display: flex;
+    flex-direction: column;         /* vertical stack, unlike desktop horizontal */
+    gap: var(--space-2);            /* 8px between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-drawer__link {
+    display: block;
+    padding: var(--space-2) var(--space-3); /* 8px top/bottom, 12px sides — from Figma */
+    text-decoration: none;
+    color: var(--text-primary);     /* full-weight text in drawer, not muted */
+    font-size: var(--font-size-sm); /* 14px in drawer — from Figma */
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-sm);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.15s ease;
+}
+
+.navbar-drawer__link:hover {
+    background-color: var(--bg-primary-hover);
+}
+
+.navbar-drawer__link:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+/* Drawer CTA — buttons stack full-width at the bottom */
+.navbar-drawer__cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);            /* 16px between buttons */
+}
+
+.navbar-drawer__cta .btn {
+    width: 100%;                    /* full-width in drawer — same .btn class, different context */
+}
+
+/* ── Responsive breakpoint ────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: var(--space-4);
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .navbar-nav,
+  .navbar-cta {
+    display: none;                  /* hidden on mobile — lives in the drawer instead */
+  }
+
+  .navbar-hamburger {
+    display: flex;                  /* show it */
+  }
+}

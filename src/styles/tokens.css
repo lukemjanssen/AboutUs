@@ -1,0 +1,128 @@
+/* ============================================================
+   DESIGN TOKENS
+   Single source of truth — pulled directly from the Figma
+   style guide (node 3:205).
+
+   Structure:
+     1. Font import
+     2. Raw palette  (the actual hex values, named after the Figma scale)
+     3. Semantic tokens  (named after their PURPOSE, not their color)
+     4. Typography
+     5. Spacing
+     6. Border radius
+     7. Shadows
+
+   Rule: components never reference a raw token directly.
+   They always use a semantic token, e.g. var(--text-primary),
+   never var(--color-neutral-900). This makes theming easy later.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+
+  /* ── 1. RAW COLOR PALETTE ───────────────────────────────── */
+  /* Named to match the Figma "Tailwind" column in the style guide */
+
+  --color-white:        #ffffff;
+  --color-neutral-50:   #fafafa;
+  --color-neutral-100:  #f5f5f5;
+  --color-neutral-200:  #e5e5e5;
+  --color-neutral-400:  #a3a3a3;
+  --color-neutral-600:  #525252;
+  --color-neutral-900:  #171717;
+  --color-neutral-950:  #0a0a0a;
+
+  --color-indigo-700:   #4338ca;
+  --color-indigo-800:   #3730a3;
+  --color-indigo-500:   #6366f1;   /* icon/brand accent */
+
+
+  /* ── 2. SEMANTIC COLOR TOKENS ───────────────────────────── */
+  /* Named after PURPOSE. These are what your CSS actually uses. */
+
+  /* Text */
+  --text-primary:        var(--color-neutral-900);  /* default body text   */
+  --text-primary-hover:  var(--color-neutral-950);  /* darker on hover     */
+  --text-primary-invert: var(--color-white);         /* text on dark bg     */
+  --text-secondary:      var(--color-neutral-600);  /* muted / nav links   */
+  --text-disabled:       var(--color-neutral-400);  /* disabled state      */
+
+  /* Backgrounds */
+  --bg-primary:                  var(--color-white);        /* page / card bg      */
+  --bg-primary-hover:            var(--color-neutral-50);   /* subtle hover        */
+  --bg-disabled:                 var(--color-neutral-100);  /* disabled elements   */
+  --bg-brand-primary:            var(--color-indigo-700);   /* primary CTA         */
+  --bg-brand-primary-hover:      var(--color-indigo-800);   /* primary CTA hover   */
+  --bg-overlay:                  var(--color-neutral-950);  /* mobile menu overlay */
+
+  /* Borders */
+  --border-primary: var(--color-neutral-200);   /* #e5e5e5 */
+
+  /* Icons */
+  --icon-brand: var(--color-indigo-500);   /* #6366f1 — logo fill */
+
+
+  /* ── 3. TYPOGRAPHY ──────────────────────────────────────── */
+
+  --font-family-base: 'Noto Sans', sans-serif;
+
+  /* Sizes — named text-{tailwind-scale} to match Figma labels */
+  --font-size-xs:   0.75rem;    /* 12px */
+  --font-size-sm:   0.875rem;   /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-xl:   1.25rem;    /* 20px */
+
+  /* Line heights — paired with their size */
+  --line-height-xs:   1rem;     /* 16px */
+  --line-height-sm:   1.25rem;  /* 20px */
+  --line-height-base: 1.5rem;   /* 24px */
+  --line-height-xl:   1.75rem;  /* 28px */
+
+  /* Weights */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* Special: logo tight tracking from Figma (-0.96px at 16px = -0.06em) */
+  --letter-spacing-logo: -0.06em;
+
+
+  /* ── 4. SPACING ─────────────────────────────────────────── */
+  /* Matches Figma's padding/gap variable names (e.g. padding/4 = 16px) */
+
+  --space-0:   0px;
+  --space-0-5: 2px;
+  --space-1:   4px;
+  --space-1-5: 6px;
+  --space-2:   8px;
+  --space-2-5: 10px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-24:  96px;
+  --space-28:  112px;
+
+
+  /* ── 5. BORDER RADIUS ───────────────────────────────────── */
+
+  --radius-sm: 4px;   /* --rounded in Figma        — buttons, links     */
+  --radius-md: 6px;   /* --rounded-md in Figma     — navbar header wrap  */
+  --radius-lg: 8px;   /* --spacing-2 in Figma      — logo mark           */
+
+
+  /* ── 6. SHADOWS ─────────────────────────────────────────── */
+
+  /* Used on buttons (normal state) */
+  --shadow-sm:
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+
+  /* Used on focused interactive elements (focus-ring/focus-band in Figma) */
+  --shadow-focus:
+    0px 0px 0px 4px rgba(68, 76, 231, 0.12),
+    0px 0px 0px 1px #444ce7;
+
+}
