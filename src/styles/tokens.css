@@ -71,13 +71,17 @@
   --font-size-xs:   0.75rem;    /* 12px */
   --font-size-sm:   0.875rem;   /* 14px */
   --font-size-base: 1rem;       /* 16px */
-  --font-size-xl:   1.25rem;    /* 20px */
+  --font-size-lg:   1.125rem;   /* 18px — hero button text */
+  --font-size-xl:   1.25rem;    /* 20px — logo mark, hero subtitle */
+  --font-size-4xl:  3.75rem;    /* 60px — hero headline */
 
   /* Line heights — paired with their size */
   --line-height-xs:   1rem;     /* 16px */
   --line-height-sm:   1.25rem;  /* 20px */
   --line-height-base: 1.5rem;   /* 24px */
+  --line-height-lg:   1.75rem;  /* 28px — hero subtitle, hero buttons */
   --line-height-xl:   1.75rem;  /* 28px */
+  --line-height-4xl:  3.75rem;  /* 60px — hero headline (tight, matches font-size) */
 
   /* Weights */
   --font-weight-regular:  400;
@@ -102,15 +106,17 @@
   --space-4:   16px;
   --space-6:   24px;
   --space-8:   32px;
+  --space-16:  64px;
   --space-24:  96px;
   --space-28:  112px;
 
 
   /* ── 5. BORDER RADIUS ───────────────────────────────────── */
 
-  --radius-sm: 4px;   /* --rounded in Figma        — buttons, links     */
-  --radius-md: 6px;   /* --rounded-md in Figma     — navbar header wrap  */
-  --radius-lg: 8px;   /* --spacing-2 in Figma      — logo mark           */
+  --radius-sm:  4px;   /* --rounded in Figma        — buttons, links     */
+  --radius-md:  6px;   /* --rounded-md in Figma     — navbar header wrap  */
+  --radius-lg:  8px;   /* --spacing-2 in Figma      — logo mark           */
+  --radius-2xl: 16px;  /* --rounded-2xl in Figma    — hero image          */
 
 
   /* ── 6. SHADOWS ─────────────────────────────────────────── */

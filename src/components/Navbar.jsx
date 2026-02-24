@@ -3,6 +3,7 @@ import "./Navbar.css";
 import logoSvg from "../assets/logo.svg";
 import menuIcon from "../assets/icon-menu.svg";
 import closeIcon from "../assets/icon-close.svg";
+import CtaButtons from "./CtaButtons";
 
 // Defined once outside the component — never changes, no need to recreate on re-render
 const NAV_LINKS = [
@@ -44,10 +45,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <div className="navbar-cta">
-          <a href="#learn-more" className="btn btn--secondary">Learn more</a>
-          <a href="#pricing"    className="btn btn--primary">See pricing</a>
-        </div>
+        <CtaButtons />
 
         <button
           className="navbar-hamburger"
@@ -104,11 +102,8 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Same btn classes — .navbar-drawer__cta makes them full-width via CSS */}
-        <div className="navbar-drawer__cta">
-          <a href="#learn-more" className="btn btn--secondary">Learn more</a>
-          <a href="#pricing"    className="btn btn--primary">See pricing</a>
-        </div>
+        {/* Same btn classes — fullWidth stacks them vertically and stretches to 100% */}
+        <CtaButtons fullWidth={true} onLinkClick={() => setIsDrawerOpen(false)} />
       </div>
 
     </header>

@@ -1,4 +1,3 @@
-/* Design tokens — import once here, available to every component */
 @import './styles/tokens.css';
 
 * {
