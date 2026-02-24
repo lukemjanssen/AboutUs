@@ -7,11 +7,11 @@ import CtaButtons from "./CtaButtons";
 
 // Defined once outside the component — never changes, no need to recreate on re-render
 const NAV_LINKS = [
-  { href: "#home",     label: "Home" },
+  { href: "#home", label: "Home" },
   { href: "#features", label: "Features" },
-  { href: "#pricing",  label: "Pricing" },
-  { href: "#about",    label: "About Us" },
-  { href: "#contact",  label: "Contact" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#about", label: "About Us" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
@@ -27,7 +27,6 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-
       {/* ── Desktop bar ─────────────────────────────────────── */}
       <div className="navbar-inner">
         <a href="/" className="navbar-logo">
@@ -39,13 +38,15 @@ const Navbar = () => {
           <ul className="navbar-nav__list">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href} className="navbar-nav__item">
-                <a href={href} className="navbar-nav__link">{label}</a>
+                <a href={href} className="navbar-nav__link">
+                  {label}
+                </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <CtaButtons />
+        <CtaButtons className="navbar-cta" />
 
         <button
           className="navbar-hamburger"
@@ -103,9 +104,11 @@ const Navbar = () => {
         </nav>
 
         {/* Same btn classes — fullWidth stacks them vertically and stretches to 100% */}
-        <CtaButtons fullWidth={true} onLinkClick={() => setIsDrawerOpen(false)} />
+        <CtaButtons
+          fullWidth={true}
+          onLinkClick={() => setIsDrawerOpen(false)}
+        />
       </div>
-
     </header>
   );
 };

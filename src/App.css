@@ -1,0 +1,13 @@
+/* Outer wrapper — 16px padding creates the gap between card and viewport edges */
+.page-body {
+  padding: var(--space-4);
+}
+
+/* The card — lighter gradient sits on top of the darker page background */
+.content-wrap {
+  border-radius: var(--radius-md);    /* 6px — from Figma */
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(177.997deg, #f9fafb 0%, #edf0f3 100%);
+  padding: var(--space-2) 0;          /* 8px top/bottom, 0 sides — from Figma */
+  overflow: hidden;                   /* clips children to the border-radius */
+}

@@ -6,7 +6,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <div className="page-body">
+        <div className="content-wrap">
+          <Hero />
+
+        </div>
+      </div>
     </>
   )
 }

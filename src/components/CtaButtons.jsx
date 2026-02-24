@@ -1,14 +1,14 @@
 import "./CtaButtons.css";
 
 // Reusable CTA button pair used in: Navbar desktop, Navbar drawer, Hero section
-const CtaButtons = ({ size = "base", fullWidth = false, onLinkClick }) => {
+const CtaButtons = ({ size = "base", fullWidth = false, onLinkClick, className }) => {
   const sizeClass  = size === "lg" ? "btn--lg"   : "";
   const widthClass = fullWidth      ? "btn--full" : "";
 
   // filter(Boolean) removes empty strings before joining — no stray spaces in the DOM
   const classes = (base) => [base, sizeClass, widthClass].filter(Boolean).join(" ");
 
-  const wrapperClass = ["cta-buttons", fullWidth && "cta-buttons--stacked", size === "lg" && "cta-buttons--lg"]
+  const wrapperClass = ["cta-buttons", fullWidth && "cta-buttons--stacked", size === "lg" && "cta-buttons--lg", className]
     .filter(Boolean)
     .join(" ");
 
