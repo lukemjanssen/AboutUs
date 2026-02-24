@@ -3,14 +3,15 @@ import "./Navbar.css";
 import logoSvg from "../assets/logo.svg";
 import menuIcon from "../assets/icon-menu.svg";
 import closeIcon from "../assets/icon-close.svg";
+import CtaButtons from "./CtaButtons";
 
 // Defined once outside the component — never changes, no need to recreate on re-render
 const NAV_LINKS = [
-  { href: "#home",     label: "Home" },
+  { href: "#home", label: "Home" },
   { href: "#features", label: "Features" },
-  { href: "#pricing",  label: "Pricing" },
-  { href: "#about",    label: "About Us" },
-  { href: "#contact",  label: "Contact" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#about", label: "About Us" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
@@ -26,7 +27,6 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-
       {/* ── Desktop bar ─────────────────────────────────────── */}
       <div className="navbar-inner">
         <a href="/" className="navbar-logo">
@@ -38,16 +38,15 @@ const Navbar = () => {
           <ul className="navbar-nav__list">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href} className="navbar-nav__item">
-                <a href={href} className="navbar-nav__link">{label}</a>
+                <a href={href} className="navbar-nav__link">
+                  {label}
+                </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="navbar-cta">
-          <a href="#learn-more" className="btn btn--secondary">Learn more</a>
-          <a href="#pricing"    className="btn btn--primary">See pricing</a>
-        </div>
+        <CtaButtons className="navbar-cta" />
 
         <button
           className="navbar-hamburger"
@@ -104,13 +103,12 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Same btn classes — .navbar-drawer__cta makes them full-width via CSS */}
-        <div className="navbar-drawer__cta">
-          <a href="#learn-more" className="btn btn--secondary">Learn more</a>
-          <a href="#pricing"    className="btn btn--primary">See pricing</a>
-        </div>
+        {/* Same btn classes — fullWidth stacks them vertically and stretches to 100% */}
+        <CtaButtons
+          fullWidth={true}
+          onLinkClick={() => setIsDrawerOpen(false)}
+        />
       </div>
-
     </header>
   );
 };

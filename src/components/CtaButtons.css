@@ -1,0 +1,17 @@
+/* Wrapper layout only — the .btn rules live in Navbar.css */
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-4); /* 16px between buttons — navbar size */
+}
+
+/* Drawer variant: vertical stack, full gap */
+.cta-buttons--stacked {
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Hero variant: wider gap between the two side-by-side buttons */
+.cta-buttons--lg {
+  gap: var(--space-8); /* 32px — from Figma hero cta-buttons gap */
+}

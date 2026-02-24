@@ -1,0 +1,84 @@
+.hero {
+  width: 100%;
+}
+
+.hero-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-24);           /* 96px all sides — from Figma */
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);                /* 32px between columns — from Figma */
+}
+
+/* ── Left column ────────────────────────────────────────────── */
+
+.hero-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);               /* 64px between text-pair and buttons */
+  width: 488px;
+  flex-shrink: 0;                     /* don't let it squish before the image does */
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);                /* 24px between headline and subtitle */
+}
+
+.hero-title {
+  font-size: var(--font-size-4xl);    /* 60px */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-4xl); /* 60px — tight, matches font-size */
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-xl);     /* 20px */
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-lg); /* 28px */
+  color: var(--text-secondary);
+}
+
+/* ── Right column ───────────────────────────────────────────── */
+
+.hero-image {
+  flex: 1;                            /* grow to fill remaining width */
+  min-width: 300px;                   /* don't let it shrink below this before stacking */
+  height: 526px;
+  border-radius: var(--radius-2xl);   /* 16px — from Figma */
+  overflow: hidden;                   /* clips the image to the rounded corners */
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                  /* fills the box and crops edges — from Figma */
+  display: block;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    padding: var(--space-8);          /* 32px on mobile */
+    gap: var(--space-8);
+  }
+
+  .hero-message {
+    width: 100%;
+    gap: var(--space-8);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-xl);   /* scale down headline on mobile */
+    line-height: var(--line-height-xl);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 240px;
+  }
+}

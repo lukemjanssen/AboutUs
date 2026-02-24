@@ -112,6 +112,18 @@
     box-shadow: var(--shadow-focus);
 }
 
+/* Size modifier — hero buttons are larger than navbar buttons */
+.btn--lg {
+    padding: var(--space-4) var(--space-6); /* 16px top/bottom, 24px sides — from Figma hero */
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+}
+
+/* Width modifier — used in the mobile drawer */
+.btn--full {
+    width: 100%;
+}
+
 .navbar-cta {
     display: flex;
     gap: var(--space-4);            /* space between buttons */
@@ -218,17 +230,6 @@
 .navbar-drawer__link:focus-visible {
     outline: none;
     box-shadow: var(--shadow-focus);
-}
-
-/* Drawer CTA — buttons stack full-width at the bottom */
-.navbar-drawer__cta {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);            /* 16px between buttons */
-}
-
-.navbar-drawer__cta .btn {
-    width: 100%;                    /* full-width in drawer — same .btn class, different context */
 }
 
 /* ── Responsive breakpoint ────────────────────────────────── */
