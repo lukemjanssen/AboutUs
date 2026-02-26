@@ -1,0 +1,184 @@
+.contact-section {
+    padding: var(--space-24);
+}
+
+.contact-container {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-8);
+}
+
+/* ── Left column ─────────────────────────────────────────── */
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-12);
+}
+
+.contact-info__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.contact-info__heading {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-4xl);
+    color: var(--text-primary);
+}
+
+.contact-info__subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-lg);
+    color: var(--text-secondary);
+}
+
+.contact-info__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
+    color: var(--text-secondary);
+}
+
+.contact-info__icon-badge {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info__icon-badge img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ── Right column — form card ────────────────────────────── */
+
+.contact-form-card {
+    flex: 1;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-8);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    height: 100%;
+}
+
+/* ── Grid fields layout ──────────────────────────────────── */
+
+.contact-form__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6) var(--space-8);
+}
+
+.contact-form__group--message {
+    grid-column: 1 / -1;
+}
+
+/* ── Field groups ────────────────────────────────────────── */
+
+.contact-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1-5);
+}
+
+.contact-form__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-sm);
+    color: var(--input-text-label);
+}
+
+/* ── Inputs & textarea ───────────────────────────────────── */
+
+.contact-form__input {
+    width: 100%;
+    padding: var(--space-2-5) var(--space-3-5);
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    font-family: var(--font-family-base);
+    color: var(--text-primary);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.contact-form__input::placeholder {
+    color: var(--input-placeholder);
+}
+
+.contact-form__input--textarea {
+    border-radius: var(--radius-lg);
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Focus */
+.contact-form__input:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12),
+                0 0 0 1px var(--input-border-focus);
+}
+
+/* Error state — driven by aria-invalid */
+.contact-form__input[aria-invalid="true"] {
+    border-color: var(--input-border-error);
+}
+
+.contact-form__input[aria-invalid="true"]:focus {
+    border-color: var(--input-border-error);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12),
+                0 0 0 1px var(--input-border-error);
+}
+
+/* ── Helper text ─────────────────────────────────────────── */
+
+.contact-form__error {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    color: var(--input-error);
+}
+
+.contact-form__hint {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    color: var(--input-hint);
+    text-align: right;
+}
+
+/* ── Submit button ───────────────────────────────────────── */
+
+.contact-form__submit {
+    width: 100%;
+}
