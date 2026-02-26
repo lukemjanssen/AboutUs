@@ -70,6 +70,7 @@ const Navbar = () => {
       <div
         id="mobile-nav"
         className={`navbar-drawer${isDrawerOpen ? " is-open" : ""}`}
+        inert={!isDrawerOpen || undefined}
       >
         {/* Drawer header — logo + close button */}
         <div className="navbar-drawer__header">

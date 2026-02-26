@@ -62,6 +62,17 @@
   /* Icons */
   --icon-brand: var(--color-indigo-500);   /* #6366f1 — logo fill */
 
+  /* Form inputs */
+  --input-bg:          var(--color-neutral-50);   /* #fafafa field background */
+  --input-border:      var(--color-neutral-200);  /* #e5e5e5 field border     */
+  --input-text-label:  #404040;                   /* neutral-700              */
+  --input-text-value:  var(--color-neutral-900);  /* typed text               */
+  --input-placeholder: var(--color-neutral-600);  /* #525252 hint text        */
+  --input-hint:        var(--color-neutral-600);  /* char counter etc.        */
+  --input-error:       #dc2626;                   /* red-600 — error state    */
+  --input-border-error:#dc2626;                   /* red border on invalid    */
+  --input-border-focus:var(--color-indigo-700);   /* indigo ring on focus     */
+
 
   /* ── 3. TYPOGRAPHY ──────────────────────────────────────── */
 
@@ -103,9 +114,13 @@
   --space-2:   8px;
   --space-2-5: 10px;
   --space-3:   12px;
+  --space-3-5: 14px;
   --space-4:   16px;
+  --space-5:   20px;
   --space-6:   24px;
   --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
   --space-16:  64px;
   --space-24:  96px;
   --space-28:  112px;
