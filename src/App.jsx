@@ -1,7 +1,8 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import './App.css'
+import Statistics from './components/Statistics'
 import Contact from './components/Contact'
+import './App.css'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className="page-body">
         <div className="content-wrap">
           <Hero />
+          <Statistics />
           <Contact />
         </div>
       </div>
