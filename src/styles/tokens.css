@@ -84,6 +84,7 @@
   --font-size-base: 1rem;       /* 16px */
   --font-size-lg:   1.125rem;   /* 18px — hero button text */
   --font-size-xl:   1.25rem;    /* 20px — logo mark, hero subtitle */
+  --font-size-3xl:  3rem;       /* 48px — statistics heading + stat numbers */
   --font-size-4xl:  3.75rem;    /* 60px — hero headline */
 
   /* Line heights — paired with their size */
@@ -92,6 +93,7 @@
   --line-height-base: 1.5rem;   /* 24px */
   --line-height-lg:   1.75rem;  /* 28px — hero subtitle, hero buttons */
   --line-height-xl:   1.75rem;  /* 28px */
+  --line-height-3xl:  3rem;     /* 48px — statistics heading + stat numbers */
   --line-height-4xl:  3.75rem;  /* 60px — hero headline (tight, matches font-size) */
 
   /* Weights */
