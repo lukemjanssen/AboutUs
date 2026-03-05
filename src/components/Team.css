@@ -1,0 +1,106 @@
+/* ============================================================
+   TEAM SECTION
+   BEM: .team  →  .team__*
+   ============================================================ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-24) var(--space-14, 56px);
+}
+
+/* ── Header block ───────────────────────────────────────────── */
+.team__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.team__eyebrow {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  color: var(--color-indigo-700);
+}
+
+.team__heading {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-3xl);
+  color: var(--text-primary);
+}
+
+.team__subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-lg);
+  color: var(--text-secondary);
+  max-width: 48ch;
+}
+
+.team__description {
+  display: none;
+}
+
+/* ── Card grid ──────────────────────────────────────────────── */
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* ── Individual card ────────────────────────────────────────── */
+.team__member {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 280px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+/* ── Photo ──────────────────────────────────────────────────── */
+.team__member-image {
+  display: block;
+  width: 100%;
+  height: 296px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── Text block below photo ─────────────────────────────────── */
+.team__member-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.team__member-role {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-lg);
+  color: var(--color-indigo-700);
+  margin-bottom: var(--space-4);
+}
+
+.team__member-description {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--text-secondary);
+}

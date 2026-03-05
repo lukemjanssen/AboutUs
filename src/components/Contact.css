@@ -182,3 +182,23 @@
 .contact-form__submit {
     width: 100%;
 }
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .contact-section {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-form__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form__group--message {
+    grid-column: 1;
+  }
+}
