@@ -120,3 +120,35 @@
   line-height: var(--line-height-lg);  /* 28px */
   color: var(--text-secondary);
 }
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .statistics {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .statistics__body {
+    flex-direction: column;
+  }
+
+  .statistics__image {
+    width: 100%;
+    align-self: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .statistics__metrics {
+    width: 100%;
+  }
+
+  .statistics__stat-value {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+  }
+
+  .statistics__stat-label {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+}

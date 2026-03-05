@@ -234,7 +234,7 @@
 
 /* ── Responsive breakpoint ────────────────────────────────── */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar-inner {
     padding: var(--space-4);
     gap: 0;
@@ -242,8 +242,8 @@
   }
 
   .navbar-nav,
-  .navbar-cta {
-    display: none;                  /* hidden on mobile — lives in the drawer instead */
+  .navbar-cta.cta-buttons {
+    display: none;                  /* hidden on tablet/mobile — lives in the drawer instead */
   }
 
   .navbar-hamburger {
